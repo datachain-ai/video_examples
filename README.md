@@ -14,6 +14,10 @@ integration with AI/ML pipelines, dashboards, and LLM reasoning.
 - Generate new features and signals for deeper insight.
 - Process millions of files at high speed using parallel and distributed compute.
 
+## Data Model Studio UI
+
+![Data Model UI](assets/datamodel.gif)
+
 ## 1. Extract Frames from Video & Detect Objects
 
 Install dependencies:
@@ -145,6 +149,10 @@ This script:
 3. Runs YOLO object detection, segmentation, and pose detection
 4. Saves results to a DataChain dataset for analysis
 
+### Extracted Frames with Humans
+
+<img src="assets/humanframes.png" alt="Frames with humans" width="75%" style="border: 2px solid black;">
+
 ## 2. Filter for Videos with Humans
 
 ```shell
@@ -181,6 +189,17 @@ chain_humans = (
 ```
 
 </details>
+
+### Detection Results
+
+| **Description** | **Image** |
+|-------------|-------|
+| **Correct detection (with people)** | <img src="assets/humanvideos.png" alt="Correct detection - with people" width="50%"> |
+| **False detection (no people)** | <img src="assets/humanvideos-no-people.png" alt="False detection no people" width="50%"> |
+
+Better detection (with people) using highest confidence score:
+
+<img src="assets/humanvideos-confidence.png" alt="High confidence score" width="75%" style="border: 2px solid black;">
 
 ## 3. Extract Video Fragments
 
