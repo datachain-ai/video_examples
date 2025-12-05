@@ -16,9 +16,13 @@ from datachain.model.ultralytics import YoloBBoxes, YoloSegments, YoloPoses
 from pydantic import BaseModel
 from ultralytics import YOLO, settings
 
-local = False
-bucket = "data-video" if local else "gs://datachain-starss23/"
-input_path = f"{bucket}/balanced_train_segments/video"
+# NOTE, copy data to local machine before running localy:
+# $ mkdir data/video
+# $ datachain cp -r gs://datachain-starss23/video_dev/dev-train-sony/ data/video/
+
+local = True
+bucket = "data/video" if local else "gs://datachain-starss23/"
+input_path = f"{bucket}/"
 output_path = f"{bucket}/temp/video-detector-frames"
 detection_dataset = "frames-detector"
 target_fps = 1
