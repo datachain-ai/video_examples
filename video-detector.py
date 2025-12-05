@@ -20,7 +20,7 @@ from ultralytics import YOLO, settings
 # $ mkdir data/video
 # $ datachain cp -r gs://datachain-starss23/video_dev/dev-train-sony/ data/video/
 
-local = True
+local = not dc.is_studio()
 bucket = "data/video" if local else "gs://datachain-starss23/"
 input_path = f"{bucket}/"
 output_path = f"{bucket}/temp/video-detector-frames"
